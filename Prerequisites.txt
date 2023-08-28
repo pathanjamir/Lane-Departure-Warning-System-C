@@ -1,0 +1,35 @@
+===================================
+Installing OpenCV on Ubuntu Linux:
+===================================
+1
+Using Package Manager (Recommended):
+The easiest way to install OpenCV on Ubuntu is using the package manager. Open a terminal and run the following
+commands:
+sudo apt update
+sudo apt install libopencv-dev
+2
+Building from Source:
+If you want more control over the OpenCV installation or need a specific version, you can build it from source. Here's a basic
+outline of the process:
+# Install required dependencies
+sudo apt update
+sudo apt install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev li
+# Clone the OpenCV repository
+git clone https://github.com/opencv/opencv.git
+cd opencv
+mkdir build
+cd build
+# Configure and build
+cmake ..
+make -j$(nproc)
+# Install (optional)
+sudo make install
+
+=============================
+For compilation purpose you need opencv libray after completing above steps for compilation purpose type following command in cosnole.
+root@tn:/home/tn# g++ -o <executable file name> <filename>.c $(pkg-config --cflags --libs opencv4) # Replace "opencv4" with the correct version if needed
+root@tn:/home/tn#./<executable file name>
+
+For this program after setting the video path type following command in console:
+root@tn:/home/tn# g++ -o main_lane main_lane.c $(pkg-config --cflags --libs opencv4) # Replace "opencv4" with the correct version if needed
+root@tn:/home/tn#./main.lain
